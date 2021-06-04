@@ -1,4 +1,8 @@
-﻿  main.cpp
-C:\Users\GA3\Desktop\オンライン\クライアント\クライアント\main.cpp(122,65): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\オンライン\クライアント\クライアント\main.cpp(122,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  クライアント.vcxproj -> C:\Users\GA3\Desktop\オンライン\クライアント\Debug\クライアント.exe
+﻿  data.cpp
+  main.cpp
+C:\Users\GA3\Desktop\coopshooting\オンライン\クライアント\クライアント\main.cpp(122,65): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\クライアント\クライアント\main.cpp(122,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  select.cpp
+  コードを生成中...
+  LINK : 前回のインクリメンタル リンクで C:\Users\GA3\Desktop\coopshooting\オンライン\クライアント\Debug\クライアント.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+  クライアント.vcxproj -> C:\Users\GA3\Desktop\coopshooting\オンライン\クライアント\Debug\クライアント.exe

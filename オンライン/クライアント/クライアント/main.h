@@ -1,10 +1,5 @@
 #pragma once
 #include "DxLib.h"
-
-#include <string.h>
-#include <string>
-#include <sstream>
-
 #define MAX 4 //接続数
 #define WIDTH 800 //windowサイズ　横
 #define HEIGHT 600 //windowサイズ　縦
