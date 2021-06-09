@@ -5,7 +5,9 @@
 #include "char.h"
 
 //リスト
-std::list<Bace*>bace;
+//std::list<Bace*>bace;
+//ユニークポインタを使ったリスト
+list<unique_ptr<Bace>>bace;
 
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
@@ -26,12 +28,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 	SetDrawScreen(DX_SCREEN_BACK);
 	
 	//リストオブジェクトを追加
-	auto a = (Bace*)new Player();
-	bace.push_back(a);
+	//auto a = (Bace*)new Player();
+	auto a = (unique_ptr<Bace>)new Player();
+	//bace.push_back(a);
+	bace.push_back(move(a));
 
 	for (int i = 0; i < 5; i++) {
-		auto a = (Bace*)new Enemy(i * 3.0f, i * 5.0f);
-		bace.push_back(a);
+		//auto a = (Bace*)new Enemy(i * 3.0f, i * 5.0f);
+		 auto a = (unique_ptr<Bace>)new Enemy(i * 3.0f, i * 5.0f);
+		//bace.push_back(a);
+		 bace.push_back(move(a));
 	}
 
 	//メインループ
@@ -41,11 +47,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 		//リストのメソッドを実行
 		for (auto i = bace.begin(); i != bace.end(); i++)
 		{
-			(*i)->Action(&bace);//各オブジェクトの処理
+			//(*i)->Action(&bace);//各オブジェクトの処理
+			((Player*)(*i).get())->Action(bace);
 		}
 		for (auto i = bace.begin(); i != bace.end(); i++)
 		{
-			(*i)->Draw();//各オブジェクトの処理
+			//(*i)->Draw();//各オブジェクトの処理
+			((Player*)(*i).get())->Draw();
 		}
 
 

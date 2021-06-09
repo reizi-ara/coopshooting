@@ -11,7 +11,7 @@ Enemy::Enemy(float _x,float _y) {
 }
 
 //ˆ—
-int Enemy::Action(list<Bace*>* bace) {
+int Enemy::Action(list<unique_ptr<Bace>>& bace) {
 
 	//ˆÚ“®ƒxƒNƒgƒ‹‚ğ‰ÁZ
 	pos.x += vec.x;

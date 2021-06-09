@@ -1,6 +1,7 @@
 #pragma once
 #include "DxLib.h"
 #include <list>
+#include <memory>
 
 using namespace std;
 
@@ -26,7 +27,7 @@ class Bace
 private:
 public:
 	int ID{ -1 };//オブジェクトのID
-	virtual int Action(list<Bace*>* bace) = 0;//処理
+	virtual int Action(list<unique_ptr<Bace>> &bace) = 0;//処理
 	virtual void Draw() = 0;//描画
 };
 
