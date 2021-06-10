@@ -14,7 +14,8 @@ Player::Player() {
 }
 
 //ˆ—
-int Player::Action(list<Bace*>* bace) {
+int Player::Action(list<unique_ptr<Bace>>& bace)
+{
 
 
 	//ƒL[“ü—Í
@@ -63,8 +64,8 @@ int Player::Action(list<Bace*>* bace) {
 
 	if (CheckHitKey(KEY_INPUT_Z) == true && ShotFlag == true)
 	{
-		auto b = (Bace*)new Bullet(pos.x + 20, pos.y, PLAYER_BULLET);
-		bace->push_back(b);
+		auto b = (unique_ptr<Bace>)new Bullet(pos.x + 20, pos.y, PLAYER_BULLET);
+		bace.push_back(move(b));
 		ShotFlag = false;
 	}
 	else if (CheckHitKey(KEY_INPUT_Z) == false)

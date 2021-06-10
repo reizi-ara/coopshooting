@@ -1,1 +1,4 @@
-﻿  試作物.vcxproj -> C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\Debug\試作物.exe
+﻿  Player.cpp
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\Player.cpp(65,34): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+  LINK : 前回のインクリメンタル リンクで C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\Debug\試作物.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+  試作物.vcxproj -> C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\Debug\試作物.exe

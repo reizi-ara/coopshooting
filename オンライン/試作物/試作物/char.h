@@ -55,6 +55,6 @@ public:
 	//コンストラクタ
 	Bullet(float _x, float _y, int _ID);
 
-	int Action(list<Bace*>* bace);
+	int Action(list<unique_ptr<Bace>>& bace);
 	void Draw();
 };

@@ -45,17 +45,17 @@ int CheckHit(int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2)
 //
 //}
 
-int Bullet::Action(list<Bace*>* bace)
+int Bullet::Action(list<unique_ptr<Bace>>& bace)
 {
 
 	v.y = -4.0f;
 
 
-	for (auto i = bace->begin(); i != bace->end(); i++)
+	for (auto i = bace.begin(); i != bace.end(); i++)
 	{
 		if ((*i)->ID == 1) {
-			ex = ((Enemy*)(*i))->pos.x;//エネミーのX座標が取れる
-			ey = ((Enemy*)(*i))->pos.y;//エネミーのy座標が取れる
+			ex = ((Enemy*)(*i).get())->pos.x;//エネミーのX座標が取れる
+			ey = ((Enemy*)(*i).get())->pos.y;//エネミーのy座標が取れる
 		}
 	}
 

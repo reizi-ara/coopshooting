@@ -5,7 +5,7 @@
 #include "char.h"
 
 //リスト
-std::list<Bace*>bace;
+list<unique_ptr<Bace>> bace;
 
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
@@ -26,12 +26,12 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	//リストオブジェクトを生成
-	auto a = (Bace*)new Player();
-	bace.push_back(a);
+	auto a = (unique_ptr<Bace>)new Player();
+	bace.push_back(move(a));
 
 	for (int i = 0; i < 1; i++) {
-		auto b = (Bace*)new Enemy(i * 3.0f, i * 5.0f);
-		bace.push_back(b);
+		auto b = (unique_ptr<Bace>)new Enemy(i * 3.0f, i * 5.0f);
+		bace.push_back(move(b));
 	}
 
 	//メインループ
@@ -41,7 +41,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 		//リストのメソッドを実行
 		for (auto i = bace.begin(); i != bace.end(); i++)
 		{
-			(*i)->Action(&bace);//各オブジェクトの処理
+			(*i)->Action(bace);//各オブジェクトの処理
 		}
 		for (auto i = bace.begin(); i != bace.end(); i++)
 		{
@@ -52,7 +52,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 			if ((*i)->ID == -999)
 			{
 				//リストから削除
-				delete(*i);
 				i = bace.erase(i);
 				break;
 			}
