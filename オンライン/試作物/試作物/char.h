@@ -13,7 +13,7 @@ public:
 	//コンストラクタ
 	Player();
 
-	int Action(list<Bace*>* bace);
+	int Action(list<unique_ptr<Bace>>& bace);
 	void Draw();
 };
 
@@ -28,7 +28,7 @@ public:
 	//コンストラクタ
 	Enemy(float _x, float _y);
 
-	int Action(list<Bace*>* bace);
+	int Action(list<unique_ptr<Bace>>& bace);
 	void Draw();
 };
 
