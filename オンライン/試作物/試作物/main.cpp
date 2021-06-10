@@ -24,18 +24,18 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 
 	//バックバッファを使用
 	SetDrawScreen(DX_SCREEN_BACK);
-	
-	//リストオブジェクトを追加
+
+	//リストオブジェクトを生成
 	auto a = (Bace*)new Player();
 	bace.push_back(a);
 
-	for (int i = 0; i < 5; i++) {
-		auto a = (Bace*)new Enemy(i * 3.0f, i * 5.0f);
-		bace.push_back(a);
+	for (int i = 0; i < 1; i++) {
+		auto b = (Bace*)new Enemy(i * 3.0f, i * 5.0f);
+		bace.push_back(b);
 	}
 
 	//メインループ
-	while (CheckHitKey(KEY_INPUT_ESCAPE)==0){
+	while (CheckHitKey(KEY_INPUT_ESCAPE) == 0) {
 		ClearDrawScreen();//画面クリア
 
 		//リストのメソッドを実行
@@ -46,6 +46,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 		for (auto i = bace.begin(); i != bace.end(); i++)
 		{
 			(*i)->Draw();//各オブジェクトの処理
+		}
+		for (auto i = bace.begin(); i != bace.end(); i++)
+		{
+			if ((*i)->ID == -999)
+			{
+				//リストから削除
+				delete(*i);
+				i = bace.erase(i);
+				break;
+			}
 		}
 
 

@@ -2,10 +2,15 @@
 #include "char.h"
 
 //コンストラクタ
-Enemy::Enemy(float _x,float _y) {
-	img = LoadGraph("image\\ai(64).jpg");
-	vec.x = 4.0f + _x;
-	vec.y = 3.0f + _y;
+Enemy::Enemy(float _x, float _y) {
+
+	img = LoadGraph("image\\Player2.png");
+
+	pos.x = _x;
+	pos.y = _y;
+
+	vec.x = 4.0f;
+	vec.y = 3.0f;
 
 	ID = 1;
 }
@@ -20,6 +25,9 @@ int Enemy::Action(list<Bace*>* bace) {
 	//画面の端に来たら、移動ベクトルを逆にする
 	if (pos.x < 0 || pos.x>736.0f)vec.x = -vec.x;
 	if (pos.y < 0 || pos.y>546.0f)vec.y = -vec.y;
+
+	/*auto b = (Bace*)new Bullet(pos.x + 20, pos.y, ENEMY_BULLET);
+	bace->push_back(b);*/
 
 	return 0;
 }
