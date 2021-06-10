@@ -9,8 +9,8 @@ Player::Player() {
 
 	ShotFlag = true;
 
-	pos.x = 1.0f;
-	pos.y = 1.0f;
+	pos.x = 200.0f;
+	pos.y = 200.0f;
 }
 
 //èàóù

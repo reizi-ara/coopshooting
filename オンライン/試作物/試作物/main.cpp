@@ -49,9 +49,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 		}
 		for (auto i = bace.begin(); i != bace.end(); i++)
 		{
-			if ((*i)->ID == -999)
+			if (((Enemy*)(*i).get())->ID == -999)
 			{
-				//ƒŠƒXƒg‚©‚çíœ
 				i = bace.erase(i);
 				break;
 			}

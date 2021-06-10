@@ -84,13 +84,6 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 	{
 		ID = -999;
 	}
-
-	if (hit == 1)
-	{
-		ID = -999;
-	}
-
-
 	return 0;
 }
 
@@ -98,5 +91,5 @@ void Bullet::Draw()
 {
 	DrawGraphF(pos.x, pos.y, img, TRUE);
 
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "ex=%f:ey=%f", ex, ey);
+	DrawFormatString(0, 0, GetColor(255, 255, 255), "ex=%f:ey=%f", pos.x, pos.y);
 }

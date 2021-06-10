@@ -28,6 +28,7 @@ public:
 	//コンストラクタ
 	Enemy(float _x, float _y);
 
+	bool e_hit;
 	int Action(list<unique_ptr<Bace>>& bace);
 	void Draw();
 };
@@ -36,7 +37,6 @@ public:
 class Bullet :public Bace
 {
 private:
-	int hit = 0;//当たり判定用
 	float x = 0;
 	float y = 0;
 
@@ -50,8 +50,10 @@ private:
 
 public:
 	int img{ 0 };//画像
-	Pos pos{ 0.0f,0.0f };//位置
+	Pos pos{ 250.0f,0.0f };//位置
 	Vec vec{ 0.0f,0.0f };//移動ベクトル
+
+	int hit = 0;//当たり判定用
 	//コンストラクタ
 	Bullet(float _x, float _y, int _ID);
 
