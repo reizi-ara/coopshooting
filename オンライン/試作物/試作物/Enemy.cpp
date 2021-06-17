@@ -47,6 +47,12 @@ int Enemy::Action(list<unique_ptr<Bace>>& bace) {
 			ID = -999;
 			((Bullet*)(*i).get())->ID = -999;
 		}
+
+		else if (((LaserBullet*)(*i).get())->hit == 1)
+		{
+			ID = -999;
+			((LaserBullet*)(*i).get())->ID = -999;
+		}
 	}
 
 	return 0;

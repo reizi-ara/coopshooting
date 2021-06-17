@@ -8,6 +8,7 @@ Player::Player() {
 	ID = 0;
 
 	ShotFlag = true;
+	Shot_Flag = true;
 
 	pos.x = 200.0f;
 	pos.y = 200.0f;
@@ -71,6 +72,17 @@ int Player::Action(list<unique_ptr<Bace>>& bace)
 	else if (CheckHitKey(KEY_INPUT_Z) == false)
 	{
 		ShotFlag = true;
+	}
+
+	if (CheckHitKey(KEY_INPUT_X) == true && Shot_Flag == true)
+	{
+		auto c = (unique_ptr<Bace>)new LaserBullet(pos.x + 20, pos.y - 100, PLAYER_BULLET);
+		bace.push_back(move(c));
+		Shot_Flag = false;
+	}
+	else if (CheckHitKey(KEY_INPUT_X) == false)
+	{
+		Shot_Flag = true;
 	}
 
 
