@@ -7,6 +7,12 @@ class Player :public Bace
 private:
 	bool ShotFlag = false;
 	bool Shot_Flag = false;
+
+	//レーザー弾丸を3発でリロードは十秒
+	int lb = 3;
+
+	int time = 0;
+
 public:
 	int img{ 0 };//画像
 	Pos pos{ 0.0f,0.0f };//位置
@@ -22,12 +28,15 @@ public:
 class Enemy :public Bace
 {
 private:
+
 public:
 	int img{ 0 };//画像
 	Pos pos{ 0.0f,0.0f };//位置
 	Vec vec{ 0.0f,0.0f };//移動ベクトル
 	//コンストラクタ
 	Enemy(float _x, float _y);
+
+	int hp = 10;
 
 	bool e_hit;
 	int Action(list<unique_ptr<Bace>>& bace);
@@ -47,14 +56,19 @@ private:
 
 	Vec v = { 0.0f,0.0f };
 
-
+	bool b_hit = false;
 
 public:
 	int img{ 0 };//画像
+	int img1{ 0 };
 	Pos pos{ 250.0f,0.0f };//位置
 	Vec vec{ 0.0f,0.0f };//移動ベクトル
 
-	int hit = 0;//当たり判定用
+	bool flag = true;
+	//当たり判定用
+	int hit = -1;
+
+	bool hit_bullet() { return b_hit; }
 	//コンストラクタ
 	Bullet(float _x, float _y, int _ID);
 
@@ -62,6 +76,7 @@ public:
 	void Draw();
 };
 
+//弾
 class LaserBullet :public Bace
 {
 private:
@@ -74,6 +89,8 @@ private:
 
 	Vec v = { 0.0f,0.0f };
 
+	bool b_hit = false;
+
 
 
 public:
@@ -81,7 +98,11 @@ public:
 	Pos pos{ 250.0f,0.0f };//位置
 	Vec vec{ 0.0f,0.0f };//移動ベクトル
 
-	int hit = 0;//当たり判定用
+	bool flag = true;
+	//当たり判定用
+	int hit = 0;
+
+	bool hit_bullet() { return b_hit; }
 	//コンストラクタ
 	LaserBullet(float _x, float _y, int _ID);
 

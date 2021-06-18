@@ -57,27 +57,46 @@ int LaserBullet::Action(list<unique_ptr<Bace>>& bace)
 	pos.x += v.x;
 	pos.y += v.y;
 
-	hit = LaserCheckHit(ex, ey, 64, 55, pos.x, pos.y, 22, 119);
+	if (LaserCheckHit(ex, ey, 64, 55, pos.x, pos.y, 22, 119) == 1)
+	{
+		b_hit = true;
+	}
+	else
+		b_hit = false;
+
+	for (auto i = bace.begin(); i != bace.end(); i++)
+	{
+		if (((Enemy*)(*i).get())->ID == 1)
+		{
+			if (b_hit == true)
+			{
+				ID = -999;
+				//((Enemy*)(*i).get())->ID = -999;
+				((Enemy*)(*i).get())->hp -= 5;
+			}
+		}
+	}
 
 	if (pos.x < 0.0f)
 	{
 		ID = -999;
 	}
 
-	if (pos.x > 778.0f)
+	if (pos.x > WIDTH - 22.0f)
 	{
 		ID = -999;
 	}
 
-	if (pos.y < 0.0f)
+	if (pos.y < -119.0f)
 	{
 		ID = -999;
 	}
 
-	if (pos.y > 481.0f)
+	if (pos.y > HEIGHT - 119.0f)
 	{
 		ID = -999;
 	}
+
 	return 0;
 }
 

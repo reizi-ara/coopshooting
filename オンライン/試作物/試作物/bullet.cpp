@@ -39,12 +39,6 @@ int CheckHit(int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2)
 	return 1;
 }
 
-//int InitGreaph(void)
-//{
-//	int ax = 0;
-//
-//}
-
 int Bullet::Action(list<unique_ptr<Bace>>& bace)
 {
 
@@ -63,14 +57,32 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 	pos.x += v.x;
 	pos.y += v.y;
 
-	hit = CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24);
+	if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+	{
+		b_hit = true;
+	}
+	else
+		b_hit = false;
+
+	for (auto i = bace.begin(); i != bace.end(); i++)
+	{
+		if (((Enemy*)(*i).get())->ID == 1)
+		{
+			if (b_hit == true)
+			{
+				ID = -999;
+				//((Enemy*)(*i).get())->ID = -999;
+				((Enemy*)(*i).get())->hp -= 1;
+			}
+		}
+	}
 
 	if (pos.x < 0.0f)
 	{
 		ID = -999;
 	}
 
-	if (pos.x > 776.0f)
+	if (pos.x > WIDTH - 24.0f)
 	{
 		ID = -999;
 	}
@@ -80,7 +92,7 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 		ID = -999;
 	}
 
-	if (pos.y > 576.0f)
+	if (pos.y > HEIGHT - 24.0f)
 	{
 		ID = -999;
 	}
@@ -89,6 +101,7 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 
 void Bullet::Draw()
 {
+
 	DrawGraphF(pos.x, pos.y, img, TRUE);
 
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "ex=%f:ey=%f", pos.x, pos.y);

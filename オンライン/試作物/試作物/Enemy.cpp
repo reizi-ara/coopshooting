@@ -25,8 +25,8 @@ int Enemy::Action(list<unique_ptr<Bace>>& bace) {
 	pos.y += vec.y;
 
 	//画面の端に来たら、移動ベクトルを逆にする
-	if (pos.x < 0 || pos.x>736.0f)vec.x = -vec.x;
-	if (pos.y < 0 || pos.y>546.0f)vec.y = -vec.y;
+	if (pos.x < 0 || pos.x>WIDTH - 64.0f) vec.x = -vec.x;
+	if (pos.y < 0 || pos.y>HEIGHT - 64.0f) vec.y = -vec.y;
 
 	/*auto b = (Bace*)new Bullet(pos.x + 20, pos.y, ENEMY_BULLET);
 	bace->push_back(b);*/
@@ -40,21 +40,24 @@ int Enemy::Action(list<unique_ptr<Bace>>& bace) {
 		ID = -999;
 	}*/
 
-	for (auto i = bace.begin(); i != bace.end(); i++)
+	/*for (auto i = bace.begin(); i != bace.end(); i++)
 	{
-		if (((Bullet*)(*i).get())->hit == 1)
+		if (((Bullet*)(*i).get())->hit_bullet() == true)
 		{
 			ID = -999;
 			((Bullet*)(*i).get())->ID = -999;
 		}
 
-		else if (((LaserBullet*)(*i).get())->hit == 1)
+		else if (((LaserBullet*)(*i).get())->hit_bullet() == true)
 		{
 			ID = -999;
 			((LaserBullet*)(*i).get())->ID = -999;
 		}
+	}*/
+	if (hp <= 0)
+	{
+		ID = -999;
 	}
-
 	return 0;
 }
 
