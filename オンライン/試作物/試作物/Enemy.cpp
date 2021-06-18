@@ -9,7 +9,7 @@ Enemy::Enemy(float _x, float _y) {
 	pos.x = _x;
 	pos.y = _y;
 
-	vec.x = 4.0f;
+	vec.x = 0.0f;
 	vec.y = 3.0f;
 
 	ID = 1;
@@ -19,6 +19,20 @@ Enemy::Enemy(float _x, float _y) {
 
 //ˆ—
 int Enemy::Action(list<unique_ptr<Bace>>& bace) {
+
+	float r = 0.0f;
+	r = vec.x * vec.x + vec.y * vec.y;
+	r = sqrt(r);
+
+	if (r == 0.0f)
+	{
+		;
+	}
+	else
+	{
+		vec.x = 2.0f / r * vec.x;
+		vec.y = 2.0f / r * vec.y;
+	}
 
 	//ˆÚ“®ƒxƒNƒgƒ‹‚ğ‰ÁZ
 	pos.x += vec.x;

@@ -27,11 +27,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 
 	//リストオブジェクトを生成
 	auto a = (unique_ptr<Bace>)new Player();
-	bace.push_back(move(a));
+	bace.emplace_back(move(a));
 
-	for (int i = 0; i < 1; i++) {
-		auto b = (unique_ptr<Bace>)new Enemy(i * 3.0f, i * 5.0f);
-		bace.push_back(move(b));
+	for (int i = 0; i < 5; i++) {
+		auto b = (unique_ptr<Bace>)new Enemy(i*100.0f, 5.0f);
+		bace.emplace_back(move(b));
 	}
 
 	//メインループ

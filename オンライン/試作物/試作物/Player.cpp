@@ -30,6 +30,20 @@ int Player::Action(list<unique_ptr<Bace>>& bace)
 		vec.x = 0.0f;
 
 
+	float r = 0.0f;
+	r = vec.x * vec.x + vec.y * vec.y;
+	r = sqrt(r);
+
+	if (r == 0.0f)
+	{
+		;
+	}
+	else
+	{
+		vec.x = 2.0f / r * vec.x;
+		vec.y = 2.0f / r * vec.y;
+	}
+
 	/*
 	for (auto i = bace->begin(); i != bace->end(); i++)
 	{
@@ -66,7 +80,7 @@ int Player::Action(list<unique_ptr<Bace>>& bace)
 	if (CheckHitKey(KEY_INPUT_Z) == true && ShotFlag == true)
 	{
 		auto b = (unique_ptr<Bace>)new Bullet(pos.x + 20, pos.y, PLAYER_BULLET);
-		bace.push_back(move(b));
+		bace.emplace_back(move(b));
 		ShotFlag = false;
 	}
 	else if (CheckHitKey(KEY_INPUT_Z) == false)
@@ -77,7 +91,7 @@ int Player::Action(list<unique_ptr<Bace>>& bace)
 	if (CheckHitKey(KEY_INPUT_X) == true && Shot_Flag == true)
 	{
 		auto c = (unique_ptr<Bace>)new LaserBullet(pos.x + 20, pos.y - 100, PLAYER_BULLET);
-		bace.push_back(move(c));
+		bace.emplace_back(move(c));
 		Shot_Flag = false;
 	}
 	else if (CheckHitKey(KEY_INPUT_X) == false)
