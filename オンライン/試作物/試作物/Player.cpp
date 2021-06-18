@@ -18,7 +18,6 @@ Player::Player() {
 int Player::Action(list<unique_ptr<Bace>>& bace)
 {
 
-
 	//ÉLÅ[ì¸óÕ
 	if (CheckHitKey(KEY_INPUT_UP))vec.y = -4.0f;
 	if (CheckHitKey(KEY_INPUT_DOWN))vec.y = 4.0f;
@@ -62,9 +61,9 @@ int Player::Action(list<unique_ptr<Bace>>& bace)
 		pos.x = 0.0f;
 	}
 
-	if (pos.x > 736.0f)
+	if (pos.x > WIDTH - 64.0f)
 	{
-		pos.x = 736.0f;
+		pos.x = WIDTH - 64.0f;
 	}
 
 	if (pos.y < 0.0f)
@@ -72,9 +71,9 @@ int Player::Action(list<unique_ptr<Bace>>& bace)
 		pos.y = 0.0f;
 	}
 
-	if (pos.y > 536.0f)
+	if (pos.y > HEIGHT - 64.0f)
 	{
-		pos.y = 536.0f;
+		pos.y = HEIGHT - 64.0f;
 	}
 
 	if (CheckHitKey(KEY_INPUT_Z) == true && ShotFlag == true)
@@ -88,17 +87,28 @@ int Player::Action(list<unique_ptr<Bace>>& bace)
 		ShotFlag = true;
 	}
 
-	if (CheckHitKey(KEY_INPUT_X) == true && Shot_Flag == true)
+	if (CheckHitKey(KEY_INPUT_X) == true && Shot_Flag == true && lb > 0)
 	{
 		auto c = (unique_ptr<Bace>)new LaserBullet(pos.x + 20, pos.y - 100, PLAYER_BULLET);
 		bace.emplace_back(move(c));
 		Shot_Flag = false;
+		lb--;
 	}
 	else if (CheckHitKey(KEY_INPUT_X) == false)
 	{
 		Shot_Flag = true;
 	}
 
+	if (lb == 0)
+	{
+		time++;
+	}
+
+	if (time == 1200)
+	{
+		lb = 3;
+		time = 0;
+	}
 
 	return 0;
 }

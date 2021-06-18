@@ -5,9 +5,10 @@
 
 using namespace std;
 
-#define WIDTH  800
-#define HEIGHT 600
+#define WIDTH  1000
+#define HEIGHT 1000
 
+//IDの代わり
 #define PLAYER_BULLET 10
 #define ENEMY_BULLET 20
 
@@ -31,7 +32,7 @@ private:
 public:
 	Vec pos;
 	int ID{ -1 };//オブジェクトのID
-	virtual int Action(list<unique_ptr<Bace>> &bace) = 0;//処理
+	virtual int Action(list<unique_ptr<Bace>>& bace) = 0;//処理
 	virtual void Draw() = 0;//描画
 };
 
