@@ -34,11 +34,12 @@ public:
 	Pos pos{ 0.0f,0.0f };//位置
 	Vec vec{ 0.0f,0.0f };//移動ベクトル
 	//コンストラクタ
-	Enemy(float _x, float _y);
+	Enemy(float _x, float _y,int _id);
 
 	int hp = 10;
 
 	bool e_hit;
+
 	int Action(list<unique_ptr<Bace>>& bace);
 	void Draw();
 };
@@ -57,6 +58,8 @@ private:
 	Vec v = { 0.0f,0.0f };
 
 	bool b_hit = false;
+
+	int Hit_id = 0;
 
 public:
 	int img{ 0 };//画像

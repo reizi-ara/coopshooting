@@ -1,5 +1,6 @@
 #pragma once
 #include "char.h"
+#include "utility.h"
 
 
 Bullet::Bullet(float _x, float _y, int _ID)
@@ -47,35 +48,112 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 
 	for (auto i = bace.begin(); i != bace.end(); i++)
 	{
-		if ((*i)->ID == 1) {
-			ex = ((Enemy*)(*i).get())->pos.x;//エネミーのX座標が取れる
-			ey = ((Enemy*)(*i).get())->pos.y;//エネミーのy座標が取れる
-		}
+	
+				if ((*i)->ID== 1) {
+
+					ex = ((Enemy*)(*i).get())->pos.x;//PosXSave(bace);//エネミーのX座標が取れる
+					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+					{
+						b_hit = true;
+						Hit_id = 1;
+						break;
+					}
+					else
+						b_hit = false;
+				}
+
+				else if ((*i)->ID == 2) {
+
+					ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
+					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+					{
+						b_hit = true;
+						Hit_id = 2;
+						break;
+					}
+					else
+						b_hit = false;
+				}
+
+				else if ((*i)->ID == 3) {
+
+					ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
+					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+					{
+						b_hit = true;
+						Hit_id = 3;
+						break;
+					}
+					else
+						b_hit = false;
+				}
+
+				else if ((*i)->ID == 4) {
+
+					ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
+					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+					{
+						b_hit = true;
+						Hit_id = 4;
+						break;
+					}
+					else
+						b_hit = false;
+				}
 	}
+
 
 
 	pos.x += v.x;
 	pos.y += v.y;
 
-	if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+	/*if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 	{
 		b_hit = true;
 	}
 	else
-		b_hit = false;
+		b_hit = false;*/
 
 	for (auto i = bace.begin(); i != bace.end(); i++)
 	{
-		if (((Enemy*)(*i).get())->ID == 1)
+		if (((Enemy*)(*i).get())->ID == Hit_id);
 		{
 			if (b_hit == true)
 			{
 				ID = -999;
 				//((Enemy*)(*i).get())->ID = -999;
-				((Enemy*)(*i).get())->hp -= 1;
+				if (Hit_id == 1)
+				{
+					if ((*i)->ID == 1) {
+						((Enemy*)(*i).get())->hp -= 1;
+					}
+				}
+				else if (Hit_id == 2)
+				{
+					if ((*i)->ID == 2) {
+						((Enemy*)(*i).get())->hp -= 1;
+					}
+				}
+				else if (Hit_id == 3)
+				{
+					if ((*i)->ID == 3) {
+						((Enemy*)(*i).get())->hp -= 1;
+					}
+				}
+				else if (Hit_id == 4)
+				{
+					if ((*i)->ID == 4) {
+						((Enemy*)(*i).get())->hp -= 1;
+					}
+				}
 			}
 		}
 	}
+	
 
 	if (pos.x < 0.0f)
 	{

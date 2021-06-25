@@ -29,14 +29,35 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 	auto a = (unique_ptr<Bace>)new Player();
 	bace.emplace_back(move(a));
 
-	for (int i = 0; i < 5; i++) {
-		auto b = (unique_ptr<Bace>)new Enemy(i*100.0f, 5.0f);
-		bace.emplace_back(move(b));
-	}
+	int time = 0;
+	
+	auto b = (unique_ptr<Bace>)new Enemy(100.0f, 5.0f,1);
+	bace.emplace_back(move(b));
+
+	auto c = (unique_ptr<Bace>)new Enemy(300.0f, 5.0f,2);
+	bace.emplace_back(move(c));
+
+	auto d = (unique_ptr<Bace>)new Enemy(500.0f, 5.0f, 3);
+	bace.emplace_back(move(d));
+
+	auto e = (unique_ptr<Bace>)new Enemy(600.0f, 5.0f, 4);
+	bace.emplace_back(move(e));
 
 	//メインループ
 	while (CheckHitKey(KEY_INPUT_ESCAPE) == 0) {
 		ClearDrawScreen();//画面クリア
+
+		/*if (time == 10)
+		{
+			auto b = (unique_ptr<Bace>)new Enemy(100.0f, 5.0f);
+			bace.emplace_back(move(b));
+		}
+		if (time == 20)
+		{
+			auto c = (unique_ptr<Bace>)new Enemy(300.0f, 5.0f);
+			bace.emplace_back(move(c));
+		}*/
+
 
 		//リストのメソッドを実行
 		for (auto i = bace.begin(); i != bace.end(); i++)
@@ -60,6 +81,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 		ScreenFlip();//画面更新
 		//例外処理
 		if ((ProcessMessage() == -1)) break;
+
+		time++;
 	}
 	return 0;
 
