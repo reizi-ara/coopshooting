@@ -20,6 +20,9 @@ public:
 	//コンストラクタ
 	Player();
 
+	//hpの値
+	int hp = 1;
+
 	int Action(list<unique_ptr<Bace>>& bace);
 	void Draw();
 };
@@ -56,9 +59,13 @@ private:
 	float ex = 0;
 	float ey = 0;
 
+	float px = 0;
+	float py = 0;
+
 	Vec v = { 0.0f,0.0f };
 
-	bool b_hit = false;
+	bool eb_hit = false;
+	bool pb_hit = false;
 
 	int Hit_id = 0;
 
@@ -72,7 +79,7 @@ public:
 	//当たり判定用
 	int hit = -1;
 
-	bool hit_bullet() { return b_hit; }
+	bool hit_bullet() { return eb_hit; }
 	//コンストラクタ
 	Bullet(float _x, float _y, int _ID,float _vy);
 

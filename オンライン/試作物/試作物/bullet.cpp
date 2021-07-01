@@ -48,19 +48,6 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 
 	for (auto i = bace.begin(); i != bace.end(); i++)
 	{
-		if ((*i)->ID == 0) {
-
-			ex = ((Player*)(*i).get())->pos.x;//PosXSave(bace);//エネミーのX座標が取れる
-			ey = ((Player*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
-			if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
-			{
-				b_hit = true;
-				Hit_id = 1;
-				break;
-			}
-			else
-				b_hit = false;
-		}
 	
 				if ((*i)->ID== 1) {
 
@@ -68,12 +55,12 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
-						b_hit = true;
+						eb_hit = true;
 						Hit_id = 1;
 						break;
 					}
 					else
-						b_hit = false;
+						eb_hit = false;
 				}
 
 				else if ((*i)->ID == 2) {
@@ -82,12 +69,12 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
-						b_hit = true;
+						eb_hit = true;
 						Hit_id = 2;
 						break;
 					}
 					else
-						b_hit = false;
+						eb_hit = false;
 				}
 
 				else if ((*i)->ID == 3) {
@@ -96,12 +83,12 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
-						b_hit = true;
+						eb_hit = true;
 						Hit_id = 3;
 						break;
 					}
 					else
-						b_hit = false;
+						eb_hit = false;
 				}
 
 				else if ((*i)->ID == 4) {
@@ -110,35 +97,27 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
-						b_hit = true;
+						eb_hit = true;
 						Hit_id = 4;
 						break;
 					}
 					else
-						b_hit = false;
+						eb_hit = false;
 				}
 	}
 
 
-
+	//位置更新
 	pos.x += v.x;
 	pos.y += v.y;
-
-	/*if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
-	{
-		b_hit = true;
-	}
-	else
-		b_hit = false;*/
 
 	for (auto i = bace.begin(); i != bace.end(); i++)
 	{
 		if (((Enemy*)(*i).get())->ID == Hit_id);
 		{
-			if (b_hit == true)
+			if (eb_hit == true)
 			{
 				ID = -999;
-				//((Enemy*)(*i).get())->ID = -999;
 				if (Hit_id == 1)
 				{
 					if ((*i)->ID == 1) {
@@ -166,7 +145,38 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 			}
 		}
 	}
+
+	//主人公の座標取得
+	for (auto i = bace.begin(); i != bace.end(); i++)
+	{
+		if ((*i)->ID == 0) {
+			px = ((Player*)(*i).get())->pos.x;//主人公のX座標が取れる
+			py = ((Player*)(*i).get())->pos.y;//主人公のy座標が取れる
+			if (CheckHit(px, py, 64, 55, pos.x, pos.y, 24, 24) == 1)
+			{
+				pb_hit = true;
+				break;
+			}
+			else
+				pb_hit = false;
+		}
+	}
 	
+	//主人公に当たったらフラグをtrueにする
+	
+
+	//当たっていたら主人公にダメージを与えて、弾が消える
+	for (auto i = bace.begin(); i != bace.end(); i++)
+	{
+		if (((Player*)(*i).get())->ID == 0)
+		{
+			if (pb_hit == true)
+			{
+				ID = -999;
+				((Player*)(*i).get())->hp -= 1;
+			}
+		}
+	}
 
 	if (pos.x < 0.0f)
 	{

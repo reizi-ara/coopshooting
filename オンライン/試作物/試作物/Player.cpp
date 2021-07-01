@@ -110,6 +110,12 @@ int Player::Action(list<unique_ptr<Bace>>& bace)
 		time = 0;
 	}
 
+	//hp‚ª0‚Ìê‡AålŒö‚ğÁ‚·
+	if (hp <= 0)
+	{
+		ID = -999;
+	}
+
 	return 0;
 }
 
