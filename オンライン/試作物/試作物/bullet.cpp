@@ -48,6 +48,19 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 
 	for (auto i = bace.begin(); i != bace.end(); i++)
 	{
+		if ((*i)->ID == 0) {
+
+			ex = ((Player*)(*i).get())->pos.x;//PosXSave(bace);//エネミーのX座標が取れる
+			ey = ((Player*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+			if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+			{
+				b_hit = true;
+				Hit_id = 1;
+				break;
+			}
+			else
+				b_hit = false;
+		}
 	
 				if ((*i)->ID== 1) {
 
