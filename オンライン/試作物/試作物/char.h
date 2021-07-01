@@ -36,7 +36,8 @@ public:
 	//コンストラクタ
 	Enemy(float _x, float _y,int _id);
 
-	int hp = 10;
+	int hp = 10;//hpの値
+	int time = 0;//時間で弾を管理する用
 
 	bool e_hit;
 
@@ -73,7 +74,7 @@ public:
 
 	bool hit_bullet() { return b_hit; }
 	//コンストラクタ
-	Bullet(float _x, float _y, int _ID);
+	Bullet(float _x, float _y, int _ID,float _vy);
 
 	int Action(list<unique_ptr<Bace>>& bace);
 	void Draw();

@@ -43,32 +43,19 @@ int Enemy::Action(list<unique_ptr<Bace>>& bace) {
 	if (pos.x < 0 || pos.x>WIDTH - 64.0f) vec.x = -vec.x;
 	if (pos.y < 0 || pos.y>HEIGHT - 64.0f) vec.y = -vec.y;
 
-	/*auto b = (Bace*)new Bullet(pos.x + 20, pos.y, ENEMY_BULLET);
-	bace->push_back(b);*/
+	time++;
 
-	/*if (pos.x < 0 || pos.x > 736.0f)
+	if (time == 300)
 	{
-		ID = -999;
+		auto d = (unique_ptr<Bace>)new Bullet(pos.x + 20, pos.y + 60, 0, 4.0f);
+		bace.emplace_back(move(d));
 	}
-	if (pos.y < 0 ||pos.y > 736.0f)
-	{
-		ID = -999;
-	}*/
 
-	/*for (auto i = bace.begin(); i != bace.end(); i++)
+	if (time > 301)
 	{
-		if (((Bullet*)(*i).get())->hit_bullet() == true)
-		{
-			ID = -999;
-			((Bullet*)(*i).get())->ID = -999;
-		}
+		time = 0;
+	}
 
-		else if (((LaserBullet*)(*i).get())->hit_bullet() == true)
-		{
-			ID = -999;
-			((LaserBullet*)(*i).get())->ID = -999;
-		}
-	}*/
 	if (hp <= 0)
 	{
 		ID = -999;

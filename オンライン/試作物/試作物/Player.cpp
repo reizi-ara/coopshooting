@@ -78,7 +78,7 @@ int Player::Action(list<unique_ptr<Bace>>& bace)
 
 	if (CheckHitKey(KEY_INPUT_Z) == true && ShotFlag == true)
 	{
-		auto b = (unique_ptr<Bace>)new Bullet(pos.x + 20, pos.y, PLAYER_BULLET);
+		auto b = (unique_ptr<Bace>)new Bullet(pos.x + 20, pos.y, PLAYER_BULLET,-4.0f);
 		bace.emplace_back(move(b));
 		ShotFlag = false;
 	}

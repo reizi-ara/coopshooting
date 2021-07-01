@@ -3,7 +3,7 @@
 #include "utility.h"
 
 
-Bullet::Bullet(float _x, float _y, int _ID)
+Bullet::Bullet(float _x, float _y, int _ID,float _vy)
 {
 	img = LoadGraph("image\\bullet.png");
 
@@ -11,6 +11,8 @@ Bullet::Bullet(float _x, float _y, int _ID)
 	pos.y = _y;
 
 	ID = _ID;
+
+	v.y = _vy;
 
 	ex = 0;
 	ey = 0;
@@ -42,8 +44,6 @@ int CheckHit(int x1, int y1, int w1, int h1, int x2, int y2, int w2, int h2)
 
 int Bullet::Action(list<unique_ptr<Bace>>& bace)
 {
-
-	v.y = -4.0f;
 
 
 	for (auto i = bace.begin(); i != bace.end(); i++)
