@@ -1,6 +1,7 @@
 #pragma once
 #include "char.h"
 #include "utility.h"
+#include "main.h"
 
 
 Bullet::Bullet(float _x, float _y, int _ID,float _vy)
@@ -55,9 +56,13 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
-						eb_hit = true;
-						Hit_id = 1;
-						break;
+						if (ID==PLAYER_BULLET)
+						{
+							eb_hit = true;
+							Hit_id = 1;
+							break;
+						}
+						
 					}
 					else
 						eb_hit = false;
@@ -69,9 +74,12 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
-						eb_hit = true;
-						Hit_id = 2;
-						break;
+						if (ID == PLAYER_BULLET)
+						{
+							eb_hit = true;
+							Hit_id = 2;
+							break;
+						}
 					}
 					else
 						eb_hit = false;
@@ -83,9 +91,12 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
-						eb_hit = true;
-						Hit_id = 3;
-						break;
+						if (ID == PLAYER_BULLET)
+						{
+							eb_hit = true;
+							Hit_id = 3;
+							break;
+						}
 					}
 					else
 						eb_hit = false;
@@ -97,9 +108,12 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
-						eb_hit = true;
-						Hit_id = 4;
-						break;
+						if (ID == PLAYER_BULLET)
+						{
+							eb_hit = true;
+							Hit_id = 4;
+							break;
+						}
 					}
 					else
 						eb_hit = false;

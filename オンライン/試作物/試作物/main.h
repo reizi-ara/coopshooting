@@ -11,6 +11,7 @@ using namespace std;
 //ID‚Ì‘ã‚í‚è
 #define PLAYER_BULLET 10
 #define ENEMY_BULLET 20
+#define BOSS_BULLET 30
 
 struct  Pos
 {

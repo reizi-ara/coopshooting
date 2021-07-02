@@ -1,23 +1,39 @@
-﻿  bullet.cpp
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(56,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(56,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(56,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(56,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(70,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(70,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(70,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(70,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(84,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(84,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(84,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(84,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(98,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(98,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(98,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(98,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(155,43): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(155,36): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(155,21): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(155,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(116,42): warning C4390: ';': 制御が空の文が見つかりました。意図した記述でしょうか?
+﻿  Enemy.cpp
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\Enemy.cpp(26,10): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  LaserBullet.cpp
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\LaserBullet.cpp(60,46): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\LaserBullet.cpp(60,39): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\LaserBullet.cpp(60,24): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\LaserBullet.cpp(60,20): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Player.cpp
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\Player.cpp(34,10): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\Player.cpp(79,34): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\Player.cpp(90,34): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+  bullet.cpp
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(57,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(57,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(57,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(57,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(75,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(75,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(75,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(75,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(92,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(92,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(92,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(92,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(109,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(109,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(109,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(109,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(169,43): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(169,36): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(169,21): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(169,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\bullet.cpp(130,42): warning C4390: ';': 制御が空の文が見つかりました。意図した記述でしょうか?
+  main.cpp
+  utility.cpp
+  コードを生成中...
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\utility.cpp(15): warning C4715: 'PosXSave': 値を返さないコントロール パスがあります。
+C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\試作物\utility.cpp(24): warning C4715: 'PosYSave': 値を返さないコントロール パスがあります。
   試作物.vcxproj -> C:\Users\GA3\Desktop\coopshooting\オンライン\試作物\Debug\試作物.exe
