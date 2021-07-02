@@ -120,11 +120,33 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 				}
 	}
 
+	//ボスの座標取得
+	for (auto i = bace.begin(); i != bace.end(); i++)
+	{
+		if ((*i)->ID == 80) {
+			bx = ((boss*)(*i).get())->pos.x;//ボスのX座標が取れる
+			by = ((boss*)(*i).get())->pos.y;//ボスのy座標が取れる
+		}
+
+		if (CheckHit(bx, by, 256, 282, pos.x, pos.y, 24, 24) == 1)
+		{
+			if (ID == PLAYER_BULLET)
+			{
+				bb_hit = true;
+				Hit_id = 80;
+				break;
+			}
+		}
+		else
+			bb_hit = false;
+	}
+
 
 	//位置更新
 	pos.x += v.x;
 	pos.y += v.y;
 
+	//敵のhp管理
 	for (auto i = bace.begin(); i != bace.end(); i++)
 	{
 		if (((Enemy*)(*i).get())->ID == Hit_id);
@@ -176,9 +198,6 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 		}
 	}
 	
-	//主人公に当たったらフラグをtrueにする
-	
-
 	//当たっていたら主人公にダメージを与えて、弾が消える
 	for (auto i = bace.begin(); i != bace.end(); i++)
 	{
@@ -188,6 +207,19 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 			{
 				ID = -999;
 				((Player*)(*i).get())->hp -= 1;
+			}
+		}
+	}
+
+	//当たっていたらbossにダメージを与えて、弾が消える
+	for (auto i = bace.begin(); i != bace.end(); i++)
+	{
+		if (((boss*)(*i).get())->ID == 80)
+		{
+			if (bb_hit == true)
+			{
+				ID = -999;
+				((boss*)(*i).get())->hp -= 1;
 			}
 		}
 	}

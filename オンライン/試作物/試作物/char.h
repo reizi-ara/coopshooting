@@ -48,6 +48,27 @@ public:
 	void Draw();
 };
 
+
+//敵:ボス
+class boss :public Bace
+{
+private:
+
+public:
+	int img{ 0 };//画像
+	Pos pos{ 0.0f,0.0f };//位置
+	Vec vec{ 0.0f,0.0f };//移動ベクトル
+	//コンストラクタ
+	boss(float _x, float _y, int _id);
+
+	int hp = 1;//hpの値
+	int time = 0;//時間で弾を管理する用
+
+	bool e_hit;
+	int Action(list<unique_ptr<Bace>>& bace);
+	void Draw();
+};
+
 //弾
 class Bullet :public Bace
 {
@@ -59,13 +80,20 @@ private:
 	float ex = 0;
 	float ey = 0;
 
+	//playerの座標を保存する用
 	float px = 0;
 	float py = 0;
 
+	//bossの座標を保存する用
+	float bx = 0;
+	float by = 0;
+
 	Vec v = { 0.0f,0.0f };
 
+	//それぞれの当たった時の判定用フラグ
 	bool eb_hit = false;
 	bool pb_hit = false;
+	bool bb_hit = false;
 
 	int Hit_id = 0;
 
