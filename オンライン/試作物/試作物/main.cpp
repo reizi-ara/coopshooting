@@ -43,6 +43,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 	auto e = (unique_ptr<Bace>)new Enemy(600.0f, 5.0f, 4);
 	bace.emplace_back(move(e));
 
+	auto z = (unique_ptr<Bace>)new boss(0.0f, 0.0f, 80);
+	bace.push_back(move(z));
+
 	//メインループ
 	while (CheckHitKey(KEY_INPUT_ESCAPE) == 0) {
 		ClearDrawScreen();//画面クリア
