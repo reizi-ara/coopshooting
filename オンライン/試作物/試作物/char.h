@@ -37,7 +37,7 @@ public:
 	Pos pos{ 0.0f,0.0f };//位置
 	Vec vec{ 0.0f,0.0f };//移動ベクトル
 	//コンストラクタ
-	Enemy(float _x, float _y,int _id);
+	Enemy(float _x, float _y,int _id,float _vx,float _vy);
 
 	int hp = 10;//hpの値
 	int time = 0;//時間で弾を管理する用

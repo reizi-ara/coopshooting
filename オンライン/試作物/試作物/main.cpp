@@ -31,16 +31,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 
 	int time = 0;
 	
-	auto b = (unique_ptr<Bace>)new Enemy(100.0f, 5.0f,1);
+	auto b = (unique_ptr<Bace>)new Enemy(100.0f, 5.0f,1,5.0f,0.0f);
 	bace.emplace_back(move(b));
 
-	auto c = (unique_ptr<Bace>)new Enemy(300.0f, 5.0f,2);
+	auto c = (unique_ptr<Bace>)new Enemy(300.0f, 5.0f,2, 0.0f, 0.0f);
 	bace.emplace_back(move(c));
 
-	auto d = (unique_ptr<Bace>)new Enemy(500.0f, 5.0f, 3);
+	auto d = (unique_ptr<Bace>)new Enemy(500.0f, 5.0f, 3, 0.0f, 0.0f);
 	bace.emplace_back(move(d));
 
-	auto e = (unique_ptr<Bace>)new Enemy(600.0f, 5.0f, 4);
+	auto e = (unique_ptr<Bace>)new Enemy(600.0f, 5.0f, 4, 0.0f, 0.0f);
 	bace.emplace_back(move(e));
 
 	auto z = (unique_ptr<Bace>)new boss(0.0f, 0.0f, 80);

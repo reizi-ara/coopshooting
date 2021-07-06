@@ -2,15 +2,15 @@
 #include "char.h"
 
 //コンストラクタ
-Enemy::Enemy(float _x, float _y,int _id) {
+Enemy::Enemy(float _x, float _y,int _id, float _vx, float _vy) {
 
 	img = LoadGraph("image\\Player2.png");
 
 	pos.x = _x;
 	pos.y = _y;
 
-	vec.x = 0.0f;
-	vec.y = 3.0f;
+	vec.x = _vx;
+	vec.y = _vy;
 
 	ID = _id;
 
