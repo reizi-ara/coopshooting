@@ -49,6 +49,15 @@ int Enemy::Action(list<unique_ptr<Bace>>& bace) {
 	{
 		auto d = (unique_ptr<Bace>)new Bullet(pos.x + 20, pos.y + 60, 0, 4.0f);
 		bace.emplace_back(move(d));
+
+		auto u = (unique_ptr<Bace>)new ShotGunEnemy(pos.x + 20, pos.y + 60, 30, 4.0f);
+		bace.emplace_back(move(u));
+
+		auto y = (unique_ptr<Bace>)new ShotGunEnemy(pos.x + 20, pos.y + 60, 60, 4.0f);
+		bace.emplace_back(move(y));
+
+		auto p = (unique_ptr<Bace>)new ShotGunEnemy(pos.x + 20, pos.y + 60, 90, 4.0f);
+		bace.emplace_back(move(p));
 	}
 
 	if (time > 301)

@@ -151,6 +151,7 @@
     <ClCompile Include="LaserBullet.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ShotGunEnemy.cpp" />
     <ClCompile Include="utility.cpp" />
   </ItemGroup>
   <ItemGroup>

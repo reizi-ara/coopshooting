@@ -115,6 +115,34 @@ public:
 	void Draw();
 };
 
+//敵　散弾
+class ShotGunEnemy :public Bace
+{
+private:
+	//playerの座標を保存する用
+	float px = 0;
+	float py = 0;
+
+	Vec v = { 0.0f,0.0f };
+
+	bool b_hit = false;
+
+	float r_x = 0.0f;//ｘ座標
+	float r_y = 0.0f;//ｙ座標
+	float r = 0.0f;//移動する角度
+	float speed = 0.0f;//速度
+
+public:
+	int img{ 0 };//画像
+	Pos pos{ 0.0f,0.0f };//位置
+	Vec vec{ 0.0f,0.0f };//移動ベクトル
+	//コンストラクタ
+	ShotGunEnemy(float _x, float _y, float _r, float _speed);
+	int Action(list<unique_ptr<Bace>>& bace);
+	void Draw();
+};
+
+
 //弾
 class LaserBullet :public Bace
 {
