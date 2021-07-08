@@ -40,23 +40,23 @@ int Enemy::Action(list<unique_ptr<Bace>>& bace) {
 	pos.y += vec.y;
 
 	//画面の端に来たら、移動ベクトルを逆にする
-	if (pos.x < 0 || pos.x>WIDTH - 64.0f) vec.x = -vec.x;
-	if (pos.y < 0 || pos.y>HEIGHT - 64.0f) vec.y = -vec.y;
+	if (pos.x < 32.0f || pos.x - 32.0f>WIDTH - 64.0f) vec.x = -vec.x;
+	if (pos.y < 0 || pos.y >HEIGHT - 64.0f) vec.y = -vec.y;
 
 	time++;
 
 	if (time == 300)
 	{
-		auto d = (unique_ptr<Bace>)new Bullet(pos.x + 20, pos.y + 60, 0, 4.0f);
-		bace.emplace_back(move(d));
+		/*auto d = (unique_ptr<Bace>)new Bullet(pos.x + 20, pos.y + 60, 0, 4.0f);
+		bace.emplace_back(move(d));*/
 
-		auto u = (unique_ptr<Bace>)new ShotGunEnemy(pos.x + 20, pos.y + 60, 30, 4.0f);
+		auto u = (unique_ptr<Bace>)new ShotGunEnemy(pos.x - 10, pos.y + 20, 60, 4.0f);
 		bace.emplace_back(move(u));
 
-		auto y = (unique_ptr<Bace>)new ShotGunEnemy(pos.x + 20, pos.y + 60, 60, 4.0f);
+		auto y = (unique_ptr<Bace>)new ShotGunEnemy(pos.x - 10, pos.y + 20, 90, 4.0f);
 		bace.emplace_back(move(y));
 
-		auto p = (unique_ptr<Bace>)new ShotGunEnemy(pos.x + 20, pos.y + 60, 90, 4.0f);
+		auto p = (unique_ptr<Bace>)new ShotGunEnemy(pos.x - 10, pos.y + 20, 120, 4.0f);
 		bace.emplace_back(move(p));
 	}
 
@@ -74,5 +74,5 @@ int Enemy::Action(list<unique_ptr<Bace>>& bace) {
 
 //描画
 void Enemy::Draw() {
-	DrawGraphF(pos.x, pos.y, img, TRUE);
+	DrawRotaGraph(pos.x, pos.y+32.0f, 1.0f, 0.0f, img, TRUE, 0, true);
 }

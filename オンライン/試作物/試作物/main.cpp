@@ -30,6 +30,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 	bace.emplace_back(move(a));
 
 	int time = 0;
+	int ID =0;
 	
 	auto b = (unique_ptr<Bace>)new Enemy(100.0f, 5.0f,1,5.0f,3.0f);
 	bace.emplace_back(move(b));

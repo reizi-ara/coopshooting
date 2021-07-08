@@ -52,8 +52,8 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 	
 				if ((*i)->ID== 1) {
 
-					ex = ((Enemy*)(*i).get())->pos.x;//PosXSave(bace);//エネミーのX座標が取れる
-					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+					ex = ((Enemy*)(*i).get())->pos.x - 32.0f;//PosXSave(bace);//エネミーのX座標が取れる
+					ey = ((Enemy*)(*i).get())->pos.y - 32.0f;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
 						if (ID==PLAYER_BULLET)
@@ -70,8 +70,8 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 
 				else if ((*i)->ID == 2) {
 
-					ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
-					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+					ex = ((Enemy*)(*i).get())->pos.x - 32.0f;//PosXSave(bace);//エネミーのX座標が取れる
+					ey = ((Enemy*)(*i).get())->pos.y - 32.0f;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
 						if (ID == PLAYER_BULLET)
@@ -87,8 +87,8 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 
 				else if ((*i)->ID == 3) {
 
-					ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
-					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+					ex = ((Enemy*)(*i).get())->pos.x - 32.0f; //PosXSave(bace);//エネミーのX座標が取れる
+					ey = ((Enemy*)(*i).get())->pos.y - 32.0f;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
 						if (ID == PLAYER_BULLET)
@@ -104,8 +104,8 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 
 				else if ((*i)->ID == 4) {
 
-					ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
-					ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+					ex = ((Enemy*)(*i).get())->pos.x - 32.0f;//PosXSave(bace);//エネミーのX座標が取れる
+					ey = ((Enemy*)(*i).get())->pos.y - 32.0f;//PosYSave(bace);//エネミーのy座標が取れる
 					if (CheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
 					{
 						if (ID == PLAYER_BULLET)
