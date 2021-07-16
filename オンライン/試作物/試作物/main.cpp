@@ -32,17 +32,17 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 	auto a = (unique_ptr<Bace>)new Player();
 	bace.emplace_back(move(a));
 
-<<<<<<< Updated upstream
+
 	int time = 0;
 	int ID =0;
 	
-	auto b = (unique_ptr<Bace>)new Enemy(100.0f, 5.0f,1,5.0f,3.0f);
-	bace.emplace_back(move(b));
-=======
+	/*auto b = (unique_ptr<Bace>)new Enemy(100.0f, 5.0f,1,5.0f,3.0f);
+	bace.emplace_back(move(b));*/
+
 	//直線で進む敵
 	/*auto e1 = (unique_ptr<Bace>)new Enemy(200.0f, 5.0f,1,0.0f,1.5f,0.0f);
 	bace.emplace_back(move(e1));
->>>>>>> Stashed changes
+
 
 	auto e2 = (unique_ptr<Bace>)new Enemy(700.0f, 5.0f, 2, 0.0f, 1.5f,0.0f);
 	bace.emplace_back(move(e2));*/
@@ -66,17 +66,17 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 		//第一ウェーブ
 		if (spawn_time == 10)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(200.0f, 5.0f, 1, 0.0f, 1.5f, 0.9f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(250.0f, 5.0f, 1, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e1));
 
-			auto e2 = (unique_ptr<Bace>)new Enemy(700.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
+			auto e2 = (unique_ptr<Bace>)new Enemy(750.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e2));
 		}
 
 		//第二ウェーブ
 		if (spawn_time == 500)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(0.0f, 100.0f, 3, 2.5f, 1.0f, 1.5f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(50.0f, 100.0f, 3, 2.5f, 1.0f, 1.5f);
 			bace.emplace_back(move(e1));
 
 			auto e2 = (unique_ptr<Bace>)new Enemy(920.0f, 100.0f, 4, -2.5f, 1.0f, 1.5f);
@@ -84,7 +84,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 		}
 		if (spawn_time == 600)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(0.0f, 100.0f, 5, 2.5f, 1.0f, 1.5f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(50.0f, 100.0f, 5, 2.5f, 1.0f, 1.5f);
 			bace.emplace_back(move(e1));
 
 			auto e2 = (unique_ptr<Bace>)new Enemy(920.0f, 100.0f, 6, -2.5f, 1.0f, 1.5f);
@@ -92,7 +92,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 		}
 		if (spawn_time == 700)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(0.0f, 100.0f, 7, 2.5f, 1.0f, 1.5f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(50.0f, 100.0f, 7, 2.5f, 1.0f, 1.5f);
 			bace.emplace_back(move(e1));
 
 			auto e2 = (unique_ptr<Bace>)new Enemy(920.0f, 100.0f, 8, -2.5f, 1.0f, 1.5f);
@@ -102,49 +102,49 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 		//第三ウェーブ
 		if (spawn_time == 1500)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(200.0f, 5.0f, 9, 0.0f, 1.5f, 0.9f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(250.0f, 5.0f, 9, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e1));
 
-			auto e2 = (unique_ptr<Bace>)new Enemy(700.0f, 5.0f, 10, 0.0f, 1.5f, 0.9f);
+			auto e2 = (unique_ptr<Bace>)new Enemy(750.0f, 5.0f, 10, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e2));
 		}
 		if (spawn_time == 1800)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(100.0f, 5.0f, 11, 0.0f, 1.5f, 0.9f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(150.0f, 5.0f, 11, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e1));
 
-			auto e2 = (unique_ptr<Bace>)new Enemy(450.0f, 5.0f, 12, 0.0f, 1.5f, 0.9f);
+			auto e2 = (unique_ptr<Bace>)new Enemy(500.0f, 5.0f, 12, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e2));
 
-			auto e3 = (unique_ptr<Bace>)new Enemy(800.0f, 5.0f, 13, 0.0f, 1.5f, 0.9f);
+			auto e3 = (unique_ptr<Bace>)new Enemy(850.0f, 5.0f, 13, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e3));
 		}
 
 		//第四ウェーブ
 		if (spawn_time == 2300)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(0.0f, 100.0f, 14, 2.5f, 1.0f, 1.5f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(50.0f, 100.0f, 14, 2.5f, 1.0f, 1.5f);
 			bace.emplace_back(move(e1));
 		}
 		if (spawn_time == 2400)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(0.0f, 100.0f, 15, 2.5f, 1.0f, 1.5f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(50.0f, 100.0f, 15, 2.5f, 1.0f, 1.5f);
 			bace.emplace_back(move(e1));
 		}
 		if (spawn_time == 2500)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(0.0f, 100.0f, 16, 2.5f, 1.0f, 1.5f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(50.0f, 100.0f, 16, 2.5f, 1.0f, 1.5f);
 			bace.emplace_back(move(e1));
 		}
 		if (spawn_time == 2600)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(0.0f, 100.0f, 17, 2.5f, 1.0f, 1.5f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(50.0f, 100.0f, 17, 2.5f, 1.0f, 1.5f);
 			bace.emplace_back(move(e1));
 
 		}
 		if (spawn_time == 2700)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(0.0f, 100.0f, 18, 2.5f, 1.0f, 1.5f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(50.0f, 100.0f, 18, 2.5f, 1.0f, 1.5f);
 			bace.emplace_back(move(e1));
 		}
 
@@ -178,34 +178,34 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE,
 		//第六ウェーブ
 		if (spawn_time == 4300)
 		{
-			auto e1 = (unique_ptr<Bace>)new Enemy(100.0f, 5.0f, 1, 0.0f, 1.5f, 0.9f);
+			auto e1 = (unique_ptr<Bace>)new Enemy(150.0f, 5.0f, 1, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e1));
 
-			auto e2 = (unique_ptr<Bace>)new Enemy(200.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
+			auto e2 = (unique_ptr<Bace>)new Enemy(250.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e2));
 
-			auto e3 = (unique_ptr<Bace>)new Enemy(300.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
+			auto e3 = (unique_ptr<Bace>)new Enemy(350.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e3));
 
-			auto e4 = (unique_ptr<Bace>)new Enemy(400.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
+			auto e4 = (unique_ptr<Bace>)new Enemy(450.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e4));
 
-			auto e5 = (unique_ptr<Bace>)new Enemy(500.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
+			auto e5 = (unique_ptr<Bace>)new Enemy(550.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e5));
 
-			auto e6 = (unique_ptr<Bace>)new Enemy(600.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
+			auto e6 = (unique_ptr<Bace>)new Enemy(650.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e6));
 
-			auto e7 = (unique_ptr<Bace>)new Enemy(700.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
+			auto e7 = (unique_ptr<Bace>)new Enemy(750.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e7));
 
-			auto e8 = (unique_ptr<Bace>)new Enemy(800.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
+			auto e8 = (unique_ptr<Bace>)new Enemy(850.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e8));
 
-			auto e9 = (unique_ptr<Bace>)new Enemy(900.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
+			auto e9 = (unique_ptr<Bace>)new Enemy(950.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e9));
 
-			auto e10 = (unique_ptr<Bace>)new Enemy(0.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
+			auto e10 = (unique_ptr<Bace>)new Enemy(50.0f, 5.0f, 2, 0.0f, 1.5f, 0.9f);
 			bace.emplace_back(move(e10));
 
 		}
