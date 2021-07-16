@@ -37,12 +37,14 @@ public:
 	Pos pos{ 0.0f,0.0f };//位置
 	Vec vec{ 0.0f,0.0f };//移動ベクトル
 	//コンストラクタ
-	Enemy(float _x, float _y,int _id,float _vx,float _vy);
+	Enemy(float _x, float _y,int _id,float _vx,float _vy,float speed);
 
 	int hp = 10;//hpの値
 	int time = 0;//時間で弾を管理する用
 
 	bool e_hit;
+
+	float e_speed = 0.0f;
 
 	int Action(list<unique_ptr<Bace>>& bace);
 	void Draw();
@@ -61,7 +63,7 @@ public:
 	//コンストラクタ
 	boss(float _x, float _y, int _id);
 
-	int hp = 1;//hpの値
+	int hp = 30;//hpの値
 	int time = 0;//時間で弾を管理する用
 
 	bool e_hit;
@@ -154,11 +156,19 @@ private:
 	float ex = 0;
 	float ey = 0;
 
+	//bossの座標を保存する用
+	float bx = 0;
+	float by = 0;
+
 	Vec v = { 0.0f,0.0f };
 
-	bool b_hit = false;
+	bool b_hit = 0;
 
+	bool eb_hit = false;
+	bool pb_hit = false;
+	bool bb_hit = false;
 
+	int Hit_id = 0;
 
 public:
 	int img{ 0 };//画像

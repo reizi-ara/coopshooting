@@ -36,4 +36,3 @@ public:
 	virtual int Action(list<unique_ptr<Bace>>& bace) = 0;//ˆ—
 	virtual void Draw() = 0;//•`‰æ
 };
-

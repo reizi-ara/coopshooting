@@ -11,7 +11,7 @@ Player::Player() {
 	Shot_Flag = true;
 
 	pos.x = 200.0f;
-	pos.y = 200.0f;
+	pos.y = 800.0f;
 }
 
 //ˆ—

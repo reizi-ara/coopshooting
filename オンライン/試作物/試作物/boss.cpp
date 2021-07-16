@@ -35,8 +35,8 @@ int boss::Action(list<unique_ptr<Bace>>& bace) {
 
 	if (time == 180)
 	{
-		auto e = (unique_ptr<Bace>)new Bullet(pos.x + 120, pos.y + 280, 0, 4.0f);
-		bace.emplace_back(move(e));
+		/*auto e = (unique_ptr<Bace>)new Bullet(pos.x + 120, pos.y + 280, 0, 4.0f);
+		bace.emplace_back(move(e));*/
 	}
 
 	if (time > 181)

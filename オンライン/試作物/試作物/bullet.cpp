@@ -126,19 +126,18 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 		if ((*i)->ID == 80) {
 			bx = ((boss*)(*i).get())->pos.x;//ボスのX座標が取れる
 			by = ((boss*)(*i).get())->pos.y;//ボスのy座標が取れる
-		}
-
-		if (CheckHit(bx, by, 256, 282, pos.x, pos.y, 24, 24) == 1)
-		{
-			if (ID == PLAYER_BULLET)
+			if (CheckHit(bx, by, 256, 282, pos.x, pos.y, 24, 24) == 1)
 			{
-				bb_hit = true;
-				Hit_id = 80;
-				break;
+				if (ID == PLAYER_BULLET)
+				{
+					bb_hit = true;
+					Hit_id = 80;
+					break;
+				}
 			}
+			else
+				bb_hit = false;
 		}
-		else
-			bb_hit = false;
 	}
 
 
@@ -174,7 +173,7 @@ int Bullet::Action(list<unique_ptr<Bace>>& bace)
 				}
 				else if (Hit_id == 4)
 				{
-					if ((*i)->ID == 4) {
+					if ((*i)->ID == Hit_id) {
 						((Enemy*)(*i).get())->hp -= 1;
 					}
 				}

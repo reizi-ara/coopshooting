@@ -48,8 +48,142 @@ int LaserBullet::Action(list<unique_ptr<Bace>>& bace)
 	for (auto i = bace.begin(); i != bace.end(); i++)
 	{
 		if ((*i)->ID == 1) {
-			ex = ((Enemy*)(*i).get())->pos.x;//エネミーのX座標が取れる
-			ey = ((Enemy*)(*i).get())->pos.y;//エネミーのy座標が取れる
+
+			ex = ((Enemy*)(*i).get())->pos.x;//PosXSave(bace);//エネミーのX座標が取れる
+			ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+			if (LaserCheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+			{
+				if (ID == PLAYER_BULLET)
+				{
+					eb_hit = true;
+					Hit_id = 1;
+					break;
+				}
+
+			}
+			else
+				eb_hit = false;
+		}
+
+		else if ((*i)->ID == 2) {
+
+			ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
+			ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+			if (LaserCheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+			{
+				if (ID == PLAYER_BULLET)
+				{
+					eb_hit = true;
+					Hit_id = 2;
+					break;
+				}
+			}
+			else
+				eb_hit = false;
+		}
+
+		else if ((*i)->ID == 3) {
+
+			ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
+			ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+			if (LaserCheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+			{
+				if (ID == PLAYER_BULLET)
+				{
+					eb_hit = true;
+					Hit_id = 3;
+					break;
+				}
+			}
+			else
+				eb_hit = false;
+		}
+
+		else if ((*i)->ID == 4) {
+
+			ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
+			ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+			if (LaserCheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+			{
+				if (ID == PLAYER_BULLET)
+				{
+					eb_hit = true;
+					Hit_id = 4;
+					break;
+				}
+			}
+			else
+				eb_hit = false;
+		}
+
+		else if ((*i)->ID == 5) {
+
+			ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
+			ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+			if (LaserCheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+			{
+				if (ID == PLAYER_BULLET)
+				{
+					eb_hit = true;
+					Hit_id = 5;
+					break;
+				}
+			}
+			else
+				eb_hit = false;
+		}
+
+		else if ((*i)->ID == 6) {
+
+			ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
+			ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+			if (LaserCheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+			{
+				if (ID == PLAYER_BULLET)
+				{
+					eb_hit = true;
+					Hit_id = 6;
+					break;
+				}
+			}
+			else
+				eb_hit = false;
+		}
+
+		else if ((*i)->ID == 4) {
+
+		ex = ((Enemy*)(*i).get())->pos.x; //PosXSave(bace);//エネミーのX座標が取れる
+		ey = ((Enemy*)(*i).get())->pos.y;//PosYSave(bace);//エネミーのy座標が取れる
+		if (LaserCheckHit(ex, ey, 64, 55, pos.x, pos.y, 24, 24) == 1)
+		{
+			if (ID == PLAYER_BULLET)
+			{
+				eb_hit = true;
+				Hit_id = 4;
+				break;
+			}
+		}
+		else
+			eb_hit = false;
+		}
+	}
+
+	for (auto i = bace.begin(); i != bace.end(); i++)
+	{
+		if ((*i)->ID == 80) {
+			bx = ((boss*)(*i).get())->pos.x;//ボスのX座標が取れる
+			by = ((boss*)(*i).get())->pos.y;//ボスのy座標が取れる
+			if (LaserCheckHit(bx, by, 256, 282, pos.x, pos.y, 24, 24) == 1)
+			{
+				if (ID == PLAYER_BULLET)
+				{
+					bb_hit = true;
+					Hit_id = 80;
+					break;
+				}
+			}
+			else
+				bb_hit = false;
 		}
 	}
 
@@ -57,22 +191,51 @@ int LaserBullet::Action(list<unique_ptr<Bace>>& bace)
 	pos.x += v.x;
 	pos.y += v.y;
 
-	if (LaserCheckHit(ex, ey, 64, 55, pos.x, pos.y, 22, 119) == 1)
-	{
-		b_hit = true;
-	}
-	else
-		b_hit = false;
-
+	
 	for (auto i = bace.begin(); i != bace.end(); i++)
 	{
-		if (((Enemy*)(*i).get())->ID == 1)
+		if (((Enemy*)(*i).get())->ID == Hit_id)
 		{
-			if (b_hit == true)
+			if (eb_hit == true)
 			{
 				ID = -999;
-				//((Enemy*)(*i).get())->ID = -999;
-				((Enemy*)(*i).get())->hp -= 5;
+				if (Hit_id == 1)
+				{
+					if ((*i)->ID == 1) {
+						((Enemy*)(*i).get())->hp -= 5;
+					}
+				}
+				else if (Hit_id == 2)
+				{
+					if ((*i)->ID == 2) {
+						((Enemy*)(*i).get())->hp -= 5;
+					}
+				}
+				else if (Hit_id == 3)
+				{
+					if ((*i)->ID == 3) {
+						((Enemy*)(*i).get())->hp -= 5;
+					}
+				}
+				else if (Hit_id == 4)
+				{
+					if ((*i)->ID == 4) {
+						((Enemy*)(*i).get())->hp -= 5;
+					}
+				}
+			}
+		}
+	}
+
+	//当たっていたらbossにダメージを与えて、弾が消える
+	for (auto i = bace.begin(); i != bace.end(); i++)
+	{
+		if (((boss*)(*i).get())->ID == 80)
+		{
+			if (bb_hit == true)
+			{
+				ID = -999;
+				((boss*)(*i).get())->hp -= 5;
 			}
 		}
 	}
